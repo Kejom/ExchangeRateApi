@@ -19,6 +19,7 @@ namespace ExchangeRateCalculatorWebApi.Controllers
             _currencycalc = currencycalc;
         }
 
+
         [LogApiRequest]
         [Route("")]
         [HttpGet]
