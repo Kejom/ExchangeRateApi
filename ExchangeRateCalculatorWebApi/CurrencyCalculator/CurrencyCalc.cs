@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ExchangeRateCalculatorWebApi.CurrencyCalculator
 {
-    public class CurrencyCalc
+    public class CurrencyCalc : ICurrencyCalc
     {
         private IApiManager _connector;
         private List<AvailableCurrency> _availableCurrencies;

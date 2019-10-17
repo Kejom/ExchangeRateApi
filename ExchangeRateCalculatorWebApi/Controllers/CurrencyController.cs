@@ -12,11 +12,11 @@ namespace ExchangeRateCalculatorWebApi.Controllers
     public class CurrencyController : ApiController
     {
 
-        private CurrencyCalc _currencycalc;
+        private ICurrencyCalc _currencycalc;
 
-        public CurrencyController()
+        public CurrencyController(ICurrencyCalc currencycalc)
         {
-            _currencycalc = new CurrencyCalc(new NBPApiManager(new LogRepository()));
+            _currencycalc = currencycalc;
         }
 
         [LogApiRequest]
