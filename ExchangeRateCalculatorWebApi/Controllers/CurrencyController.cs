@@ -43,5 +43,22 @@ namespace ExchangeRateCalculatorWebApi.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+
+        [LogApiRequest]
+        [Route("ExchangeRate/{cur1}/{cur2}")]
+        [HttpGet]
+        public IHttpActionResult GetExchangeRate( string cur1, string cur2)
+        {
+            try
+            {
+                var response = _currencycalc.CalculateCurrency(1, cur1, cur2);
+                return Ok(response);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
