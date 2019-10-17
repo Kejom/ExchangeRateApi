@@ -13,17 +13,12 @@ namespace ExchangeRateCalculatorWebApi.Logger
         {
             base.OnActionExecuted(actionExecutedContext);
 
-            var request = actionExecutedContext.Request;
-            var response = actionExecutedContext.Response;
-            var actionContext = actionExecutedContext.ActionContext;
-
-
             var log = new CallToApiLog
             {
-                DataSent = response.Content.ReadAsStringAsync().Result,
+                DataSent = actionExecutedContext.Response.Content.ReadAsStringAsync().Result,
                 DateTime = DateTime.Now.ToString(),
                 ClientIp = HttpContext.Current.Request.UserHostAddress,
-                RouteCalled = request.RequestUri.AbsolutePath
+                RouteCalled = actionExecutedContext.Request.RequestUri.AbsolutePath
         };
             var logger = new LogRepository();
             logger.AddApiLog(log);
