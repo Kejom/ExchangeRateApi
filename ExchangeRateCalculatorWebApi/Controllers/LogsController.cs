@@ -14,9 +14,9 @@ namespace ExchangeRateCalculatorWebApi.Controllers
     {
         private ILogRepository _logcontext;
 
-        public LogsController()
+        public LogsController(ILogRepository logcontext)
         {
-            _logcontext = new LogRepository();
+            _logcontext = logcontext;
         }
 
         [LogApiRequest]
