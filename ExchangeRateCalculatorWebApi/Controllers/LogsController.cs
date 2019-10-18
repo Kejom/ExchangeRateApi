@@ -19,7 +19,7 @@ namespace ExchangeRateCalculatorWebApi.Controllers
             _logcontext = logcontext;
         }
 
-        [LogApiRequest]
+
         [Route("logs/api")]
         [HttpGet]
         public IHttpActionResult GetApiLogs()
@@ -28,7 +28,7 @@ namespace ExchangeRateCalculatorWebApi.Controllers
             
             return Ok(_logcontext.GetApiLogs());
         }
-        [LogApiRequest]
+
         [Route("logs/ext")]
         [HttpGet]
         public IHttpActionResult GetExtLogs()
