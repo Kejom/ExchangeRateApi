@@ -1,42 +1,42 @@
-Available Routes:
+# Available Routes:
 
 
-main:
-
+###  main:
+```
 https://exchangeratecalculatorwebapi20191017073631.azurewebsites.net
 
-returns list of available currencies
+ returns list of available currencies
+```
 
-
-/calculate/{amount}/{currency1}/{currency}:
-
+### /calculate/{amount}/{currency1}/{currency}:
+```
 example:  https://exchangeratecalculatorwebapi20191017073631.azurewebsites.net/calculate/100/usd/eur
 
 calculates given amount from currency1 to currency2.
 Currency format: code from main end point  eg.:  eur, not euro.
+```
 
-
-/exchangerate/{currency1{/{currency2}
-
+### /exchangerate/{currency1{/{currency2}
+```
 example: https://exchangeratecalculatorwebapi20191017073631.azurewebsites.net/exchangerate/eur/pln
 
 returns exchange rate from currency1 to currency2
+```
 
 
+### /logs/api:
 
-/logs/api:
-
-
+```
 https://exchangeratecalculatorwebapi20191017073631.azurewebsites.net/logs/api
 
 returns list of logs for calls to api
 
-
-/logs/ext
-
+```
+### /logs/ext
+```
 
 https://exchangeratecalculatorwebapi20191017073631.azurewebsites.net/logs/ext
 
 returns list of logs for calls to external resources, in this case NBP api
-
+```
 
